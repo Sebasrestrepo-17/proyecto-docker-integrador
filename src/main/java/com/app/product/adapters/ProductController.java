@@ -6,16 +6,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.app.product.domain.Product;
-import com.app.users.domain.IProductServices;
-import com.app.users.domain.User;
+import com.app.product.domain.IProductService;
+import com.app.product.domain.Product;
 
 @RestController
 @RequestMapping("/api/users")
 public class ProductController {
 
-    private final IProductService productService;
+    private final IProductService productServices;
 
-    public ProductController(IProductService productService) {
+    public ProductController(IProductService productServices) {
         this.productServices = productServices;
     }
 
@@ -35,8 +35,8 @@ public class ProductController {
 
     // create user
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody Product user) {
-        User newUser = productServices.save(user);
+    public ResponseEntity<Product> createUser(@RequestBody Product user) {
+        Product newUser = productServices.save(user);
         return ResponseEntity.ok(newUser);
     }
 

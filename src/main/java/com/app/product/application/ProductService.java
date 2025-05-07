@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.app.product.domain.Product;
 import com.app.shared.adapters.exception.ResourceNotFoundException;
 
-import com.app.users.domain.IUserRepository;
-import com.app.users.domain.IUserService;
-import com.app.users.domain.User;
+import com.app.product.domain.IProductRepository;
+import com.app.product.domain.IProductService;
+import com.app.product.domain.Product;
 
 @Service
 public class ProductService implements IProductService {
