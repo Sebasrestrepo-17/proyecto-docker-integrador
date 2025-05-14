@@ -10,34 +10,24 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IPaymentRepository extends JpaRepository<Payment, Long> {
 
-    // Get all users (already provided by JpaRepository)
     @Override
     @NonNull
     List<Payment> findAll();
 
-    // Search user by ID (already provided by JpaRepository)
     @Override
     @NonNull
-    Optional<Payment> findById(@NonNull Long id);
+    Optional<Payment> findById(@NonNull Long paymentId);
 
-    // Save a user (already provided by JpaRepository)
     @Override
     @NonNull
-    <S extends Payment> S save(@NonNull S user);
+    <S extends Payment> S save(@NonNull S payment);
 
-    // Check if a user with a specific ID exists (already provided by JpaRepository)
     @Override
-    boolean existsById(@NonNull Long id);
+    boolean existsById(@NonNull Long paymentId);
 
-    // Delete user by ID (already provided by JpaRepository)
     @Override
-    void deleteById(@NonNull Long id);
+    void deleteById(@NonNull Long paymentId);
 
-    // Additional application-specific methods:
-
-    // Search for a user by their email
-    Optional<Payment> findByEmail(String email);
-
-    // Check if an email is already registered
-    boolean existsByEmail(String email);
+    // Optional: find all payments for a specific order
+    List<Payment> findByOrderId(@NonNull Long orderId);
 }

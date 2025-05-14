@@ -1,16 +1,13 @@
 package com.app.product.application;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.app.product.domain.Product;
-import com.app.shared.adapters.exception.ResourceNotFoundException;
-
 import com.app.product.domain.IProductRepository;
 import com.app.product.domain.IProductService;
 import com.app.product.domain.Product;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService implements IProductService {
@@ -29,31 +26,30 @@ public class ProductService implements IProductService {
     @Override
     public Product findById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("user not found with ID: " + id));
+                .orElseThrow(() -> new RuntimeException("Product not found with ID: " + id));
     }
 
     @Override
     @Transactional
-    public Product save(Product user) {
-        if (productRepository.existsByBrand(user.getBrand())) {
-            throw new IllegalArgumentException("email registred: " + user.getBrand());
-        }
-        return productRepository.save(user);
+    public Product save(Product product) {
+        return productRepository.save(product);
     }
 
     @Override
     @Transactional
-    public Product update(Product user, Long id) {
-        Product existingUser = findById(id);
-        existingUser.setName(user.getName());
-        existingUser.setBrand(user.getBrand());
-        return productRepository.save(existingUser);
+    public Product update(Product product, Long id) {
+        Product existingProduct = findById(id);
+        existingProduct.setName(product.getName());
+        existingProduct.setBrand(product.getBrand());
+        existingProduct.setCategory(product.getCategory());
+        existingProduct.setPrice(product.getPrice());
+        return productRepository.save(existingProduct);
     }
 
     @Override
     @Transactional
     public void deleteById(Long id) {
-        Product user = findById(id);
-        productRepository.delete(user);
+        Product product = findById(id);
+        productRepository.delete(product);
     }
 }

@@ -3,14 +3,15 @@ package com.app.payment.domain;
 import java.util.List;
 
 public interface IPaymentService {
-    
+
     List<Payment> findAll();
 
-    Payment findById(Long id);
+    Payment findById(Long paymentId);
 
-    Payment save(Payment user);
+    Payment save(Payment payment);
 
-    Payment update(Payment user, Long id);
+    Payment update(Payment payment, Long paymentId);
 
-    void deleteById(Long id);
+    void deleteById(Long paymentId);
 }
+
