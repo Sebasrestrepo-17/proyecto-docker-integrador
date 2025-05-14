@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.app.product.domain.Product;
 import com.app.product.domain.IProductService;
-import com.app.product.domain.Product;
+
 
 @RestController
 @RequestMapping("/api/users")
