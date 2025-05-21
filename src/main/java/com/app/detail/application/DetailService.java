@@ -40,10 +40,10 @@ public class DetailService implements IDetailService {
     @Transactional
     public Detail update(Detail detail, Long id) {
         Detail existingDetail = findById(id);
-        existingDetail.setPedidoId(detail.getPedidoId());
-        existingDetail.setProductoId(detail.getProductoId());
-        existingDetail.setCantidad(detail.getCantidad());
-        existingDetail.setPrecioUnitario(detail.getPrecioUnitario());
+        existingDetail.setOrderId(detail.getOrderId());
+        existingDetail.setProductId(detail.getProductId());
+        existingDetail.setQuantity(detail.getQuantity());
+        existingDetail.setUnitPrice(detail.getUnitPrice());
         existingDetail.setSubtotal(detail.getSubtotal());
         return detailRepository.save(existingDetail);
     }
@@ -55,3 +55,4 @@ public class DetailService implements IDetailService {
         detailRepository.delete(detail);
     }
 }
+

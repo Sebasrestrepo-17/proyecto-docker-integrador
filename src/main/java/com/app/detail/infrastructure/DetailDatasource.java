@@ -31,10 +31,10 @@ public class DetailDatasource {
 
     public Optional<Detail> update(Detail detail, Long id) {
         return detailRepository.findById(id).map(existingDetail -> {
-            existingDetail.setPedidoId(detail.getPedidoId());
-            existingDetail.setProductoId(detail.getProductoId());
-            existingDetail.setCantidad(detail.getCantidad());
-            existingDetail.setPrecioUnitario(detail.getPrecioUnitario());
+            existingDetail.setOrderId(detail.getOrderId());
+            existingDetail.setProductId(detail.getProductId());
+            existingDetail.setQuantity(detail.getQuantity());
+            existingDetail.setUnitPrice(detail.getUnitPrice());
             existingDetail.setSubtotal(detail.getSubtotal());
             return detailRepository.save(existingDetail);
         });
@@ -48,3 +48,4 @@ public class DetailDatasource {
         return false;
     }
 }
+

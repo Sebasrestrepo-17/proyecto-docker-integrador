@@ -1,11 +1,11 @@
 package com.app.detail.infrastructure;
 
 public class DetailDto {
-    private Long detalleId;
-    private Long pedidoId;
-    private Long productoId;
-    private Integer cantidad;
-    private Double precioUnitario;
+    private Long detailId;
+    private Long orderId;
+    private Long productId;
+    private Integer quantity;
+    private Double unitPrice;
     private Double subtotal;
 
     // Empty constructor
@@ -13,54 +13,54 @@ public class DetailDto {
     }
 
     // Constructor with parameters
-    public DetailDto(Long detalleId, Long pedidoId, Long productoId, Integer cantidad, Double precioUnitario, Double subtotal) {
-        this.detalleId = detalleId;
-        this.pedidoId = pedidoId;
-        this.productoId = productoId;
-        this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
+    public DetailDto(Long detailId, Long orderId, Long productId, Integer quantity, Double unitPrice, Double subtotal) {
+        this.detailId = detailId;
+        this.orderId = orderId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
         this.subtotal = subtotal;
     }
 
-    // Getters y Setters
-    public Long getDetalleId() {
-        return detalleId;
+    // Getters and Setters
+    public Long getDetailId() {
+        return detailId;
     }
 
-    public void setDetalleId(Long detalleId) {
-        this.detalleId = detalleId;
+    public void setDetailId(Long detailId) {
+        this.detailId = detailId;
     }
 
-    public Long getPedidoId() {
-        return pedidoId;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setPedidoId(Long pedidoId) {
-        this.pedidoId = pedidoId;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public Long getProductoId() {
-        return productoId;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProductoId(Long productoId) {
-        this.productoId = productoId;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public Integer getCantidad() {
-        return cantidad;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public Double getPrecioUnitario() {
-        return precioUnitario;
+    public Double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setPrecioUnitario(Double precioUnitario) {
-        this.precioUnitario = precioUnitario;
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Double getSubtotal() {
@@ -75,12 +75,13 @@ public class DetailDto {
     @Override
     public String toString() {
         return "DetailDto{" +
-                "detalleId=" + detalleId +
-                ", pedidoId=" + pedidoId +
-                ", productoId=" + productoId +
-                ", cantidad=" + cantidad +
-                ", precioUnitario=" + precioUnitario +
+                "detailId=" + detailId +
+                ", orderId=" + orderId +
+                ", productId=" + productId +
+                ", quantity=" + quantity +
+                ", unitPrice=" + unitPrice +
                 ", subtotal=" + subtotal +
                 '}';
     }
 }
+

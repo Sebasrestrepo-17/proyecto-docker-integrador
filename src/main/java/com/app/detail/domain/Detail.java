@@ -9,19 +9,19 @@ import lombok.Data;
 public class Detail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long detalleId; // DetalleID
+    private Long detailId; // Detail ID
 
     @Column(nullable = false)
-    private Long pedidoId; // PedidoID
+    private Long orderId; // Order ID
 
     @Column(nullable = false)
-    private Long productoId; // ProductoID
+    private Long productId; // Product ID
 
     @Column(nullable = false)
-    private Integer cantidad; // Cantidad
+    private Integer quantity; // Quantity
 
     @Column(nullable = false)
-    private Double precioUnitario; // PrecioUnitario
+    private Double unitPrice; // Unit Price
 
     @Column(nullable = false)
     private Double subtotal; // Subtotal
@@ -30,54 +30,54 @@ public class Detail {
     public Detail() {}
 
     // Constructor with parameters
-    public Detail(Long detalleId, Long pedidoId, Long productoId, Integer cantidad, Double precioUnitario, Double subtotal) {
-        this.detalleId = detalleId;
-        this.pedidoId = pedidoId;
-        this.productoId = productoId;
-        this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
+    public Detail(Long detailId, Long orderId, Long productId, Integer quantity, Double unitPrice, Double subtotal) {
+        this.detailId = detailId;
+        this.orderId = orderId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
         this.subtotal = subtotal;
     }
 
     // Getters and Setters
-    public Long getDetalleId() {
-        return detalleId;
+    public Long getDetailId() {
+        return detailId;
     }
 
-    public void setDetalleId(Long detalleId) {
-        this.detalleId = detalleId;
+    public void setDetailId(Long detailId) {
+        this.detailId = detailId;
     }
 
-    public Long getPedidoId() {
-        return pedidoId;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setPedidoId(Long pedidoId) {
-        this.pedidoId = pedidoId;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public Long getProductoId() {
-        return productoId;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProductoId(Long productoId) {
-        this.productoId = productoId;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public Integer getCantidad() {
-        return cantidad;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public Double getPrecioUnitario() {
-        return precioUnitario;
+    public Double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setPrecioUnitario(Double precioUnitario) {
-        this.precioUnitario = precioUnitario;
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Double getSubtotal() {
@@ -87,5 +87,5 @@ public class Detail {
     public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
-
 }
+

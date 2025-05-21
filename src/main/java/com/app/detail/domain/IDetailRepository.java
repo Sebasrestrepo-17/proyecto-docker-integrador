@@ -35,15 +35,16 @@ public interface IDetailRepository extends JpaRepository<Detail, Long> {
 
     // Additional application-specific methods:
 
-    // Search for a detail by PedidoID
-    Optional<Detail> findByPedidoId(Long pedidoId);
+    // Search for a detail by orderId
+    Optional<Detail> findByOrderId(Long orderId);
 
-    // Search for a detail by ProductoID
-    Optional<Detail> findByProductoId(Long productoId);
+    // Search for a detail by productId
+    Optional<Detail> findByProductId(Long productId);
 
-    // Check if a PedidoID exists
-    boolean existsByPedidoId(Long pedidoId);
+    // Check if an orderId exists
+    boolean existsByOrderId(Long orderId);
 
-    // Check if a ProductoID exists
-    boolean existsByProductoId(Long productoId);
+    // Check if a productId exists
+    boolean existsByProductId(Long productId);
 }
+
