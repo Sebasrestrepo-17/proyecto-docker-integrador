@@ -55,6 +55,7 @@ public class AuthService {
         user.setEmail(request.getEmail());
         user.setName(request.getName());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setPhone(request.getPhone());
         userRepository.save(user);
 
         // Authenticate the user and generate tokens

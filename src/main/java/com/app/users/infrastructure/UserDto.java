@@ -4,16 +4,18 @@ public class UserDto {
     private Long id;
     private String name;
     private String email;
+    private String phone;
 
     // Empty constructor
     public UserDto() {
     }
 
     // Constructor with parameters
-    public UserDto(Long id, String name, String email) {
+    public UserDto(Long id, String name, String email, String phone ) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.phone = phone;
     }
 
     // Getters y Setters
@@ -41,6 +43,14 @@ public class UserDto {
         this.email = email;
     }
 
+    public String getPhone(){
+        return phone;
+    }
+
+    public void setPhone(String phone){
+        this.phone = phone;
+    }
+
     // toString() method
     @Override
     public String toString() {
@@ -48,6 +58,7 @@ public class UserDto {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

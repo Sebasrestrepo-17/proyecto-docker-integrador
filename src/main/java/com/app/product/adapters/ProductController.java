@@ -10,7 +10,7 @@ import com.app.product.domain.IProductService;
 
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/product")
 public class ProductController {
 
     private final IProductService productServices;
@@ -21,35 +21,35 @@ public class ProductController {
 
     // all users
     @GetMapping
-    public ResponseEntity<List<Product>> getAllUsers() {
-        List<Product> users = productServices.findAll();
-        return ResponseEntity.ok(users);
+    public ResponseEntity<List<Product>> getAllProduct() {
+        List<Product> products = productServices.findAll();
+        return ResponseEntity.ok(products);
     }
 
     // user by id
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getUserById(@PathVariable Long id) {
-        Product user = productServices.findById(id);
-        return ResponseEntity.ok(user);
+    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
+        Product product = productServices.findById(id);
+        return ResponseEntity.ok(product);
     }
 
     // create user
     @PostMapping
-    public ResponseEntity<Product> createUser(@RequestBody Product user) {
-        Product newUser = productServices.save(user);
-        return ResponseEntity.ok(newUser);
+    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+        Product newProduct = productServices.save(product);
+        return ResponseEntity.ok(newProduct);
     }
 
     // update user
     @PutMapping("/{id}")
-    public ResponseEntity<Product> updateUser(@PathVariable Long id, @RequestBody Product user) {
-        Product updatedUser = productServices.update(user, id);
-        return ResponseEntity.ok(updatedUser);
+    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product) {
+        Product updatedProduct = productServices.update(product, id);
+        return ResponseEntity.ok(updatedProduct);
     }
 
     // delete user
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         productServices.deleteById(id);
         return ResponseEntity.noContent().build();
     }
